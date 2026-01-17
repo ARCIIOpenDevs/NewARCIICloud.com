@@ -1,0 +1,18 @@
+# Prettier Configuration
+semi = true
+singleQuote = true
+tabWidth = 2
+useTabs = false
+trailingComma = es5
+printWidth = 80
+bracketSpacing = true
+jsxSingleQuote = false
+arrowParens = avoid
+endOfLine = lf
+
+# Plugin settings
+tailwindcss:
+  callees:
+    - "cn"
+    - "cva"
+  config: "./tailwind.config.js"
