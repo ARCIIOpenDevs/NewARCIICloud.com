@@ -83,7 +83,7 @@ export default function CarritoPage() {
                         
                         {/* Features */}
                         <div className="flex flex-wrap gap-2 mb-4">
-                          {item.features.map((feature, idx) => (
+                          {item.features?.map((feature, idx) => (
                             <span key={idx} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
                               {feature}
                             </span>
