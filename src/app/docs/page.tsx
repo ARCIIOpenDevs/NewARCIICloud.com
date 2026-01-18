@@ -596,7 +596,7 @@ export default function DocsPage() {
               <div className="flex items-center justify-center gap-8 text-sm text-secondary-200">
                 <div className="flex items-center gap-2">
                   <ChatBubbleLeftRightIcon className="h-4 w-4" />
-                  <span>Respuesta < 2 horas</span>
+                    <span>Respuesta &lt; 2 horas</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <AcademicCapIcon className="h-4 w-4" />

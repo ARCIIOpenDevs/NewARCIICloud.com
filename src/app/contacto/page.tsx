@@ -384,7 +384,7 @@ export default function ContactoPage() {
                   <div className="space-y-3 text-sm text-secondary-600">
                     <div className="flex justify-between">
                       <span>Chat en vivo:</span>
-                      <span className="font-medium text-green-600">< 30 segundos</span>
+                      <span className="font-medium text-green-600">&lt; 30 segundos</span>
                     </div>
                     <div className="flex justify-between">
                       <span>WhatsApp:</span>

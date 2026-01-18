@@ -518,7 +518,7 @@ export default function VPSEmpresarialPage() {
                   <div className="text-sm text-secondary-600">Uptime garantizado</div>
                 </div>
                 <div className="bg-white rounded-xl p-6">
-                  <div className="text-2xl font-bold text-orange-600 mb-1">< 15min</div>
+                  <div className="text-2xl font-bold text-orange-600 mb-1">&lt; 15min</div>
                   <div className="text-sm text-secondary-600">Respuesta crítica</div>
                 </div>
                 <div className="bg-white rounded-xl p-6">

@@ -477,7 +477,7 @@ export default function VPSProfesionalPage() {
                   <div className="text-green-700 text-sm">Uptime SLA</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-blue-600 mb-2">< 200ms</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">&lt; 200ms</div>
                   <div className="text-green-700 text-sm">Latencia promedio</div>
                 </div>
                 <div>
