@@ -247,7 +247,7 @@ export default function CentroDeDatosPage() {
                 ⚡
               </div>
               <h3 className="font-semibold text-lg mb-3">Baja Latencia</h3>
-              <p className="text-secondary-600">< 5ms latencia promedio a destinos nacionales y conexión directa a puntos de intercambio.</p>
+              <p className="text-secondary-600">&lt; 5ms latencia promedio a destinos nacionales y conexión directa a puntos de intercambio.</p>
             </div>
           </div>
         </div>
@@ -410,7 +410,7 @@ export default function CentroDeDatosPage() {
             <div className="bg-white p-6 rounded-xl">
               <div className="text-3xl mb-2">⚡</div>
               <h3 className="font-semibold mb-3">Baja Latencia</h3>
-              <p className="text-secondary-600 text-sm">< 20ms a principales ciudades de América, < 150ms intercontinental.</p>
+              <p className="text-secondary-600 text-sm">&lt; 20ms a principales ciudades de América, &lt; 150ms intercontinental.</p>
             </div>
           </div>
         </div>
