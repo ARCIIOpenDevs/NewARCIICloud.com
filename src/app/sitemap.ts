@@ -12,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${baseUrl}/precios`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/calculadora`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
@@ -39,13 +45,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/developers`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/ecommerce`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/negocios/hosting-web`,
@@ -78,7 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
-    // Páginas de planes
+    // Páginas de planes específicos
     {
       url: `${baseUrl}/planes/hosting-eco`,
       lastModified: currentDate,
@@ -89,10 +95,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/planes/hosting-estandar`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/planes/hosting-performance`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/planes/vps-basico`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/planes/vps-profesional`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/planes/servidor-dedicado`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.6,
@@ -116,5 +140,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.4,
     },
+    // Páginas de recursos
+    {
+      url: `${baseUrl}/recursos/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/recursos/documentacion`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/recursos/tutoriales`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+    // Páginas de soporte
+    {
+      url: `${baseUrl}/soporte/centro-ayuda`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/soporte/status`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.6,
+    }
   ]
 }
