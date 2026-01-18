@@ -176,28 +176,69 @@ export function PricingCalculator() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [recommendations, setRecommendations] = useState<string[]>([]);
 
-  // Calculate total price
-  useEffect(() => {
-    let total = 0;
+  // Generate smart recommendations based on user profile
+  const generateRecommendations = () => {
+    const recs: string[] = [];
     
-    // Add selected main services
+    // Traffic-based recommendations
+    if (state.expectedTraffic === 'high' && !state.selectedServices.vps) {
+      recs.push('🚀 Para sitios de alto tráfico, recomendamos VPS Cloud para mejor rendimiento');
+    }
+    
+    if (state.expectedTraffic === 'low' && state.selectedServices.dedicado) {
+      recs.push('💡 Para sitios pequeños, el Hosting Web es más económico y suficiente');
+    }
+
+    // Business size recommendations
+    if (state.businessSize === 'enterprise' && !state.additionalServices.includes('ssl-premium')) {
+      recs.push('🔒 Las empresas necesitan SSL Premium para mayor confianza del cliente');
+    }
+
+    // Project type recommendations
+    if (state.projectType === 'ecommerce' && !state.additionalServices.includes('backup-premium')) {
+      recs.push('🛡️ Para e-commerce recomendamos Backup Premium para proteger transacciones');
+    }
+
+    // Billing cycle recommendations
+    if (state.billingCycle === 'monthly') {
+      recs.push('💰 Ahorra hasta 20% pagando anualmente en lugar de mensual');
+    }
+
+    // SSL recommendations
+    if (Object.keys(state.selectedServices).length > 0 && !state.additionalServices.includes('ssl-premium')) {
+      recs.push('✅ SSL básico incluido gratis, considera SSL Premium para validación extendida');
+    }
+
+    return recs;
+  };
+
+  // Calculate total price and savings
+  useEffect(() => {
+    let monthlyTotal = 0;
+    let yearlyTotal = 0;
+    
+    // Calculate main services
     Object.entries(state.selectedServices).forEach(([serviceId, optionId]) => {
       const service = serviceTypes.find(s => s.id === serviceId);
       const option = service?.options.find(o => o.id === optionId);
       if (option) {
-        total += state.billingCycle === 'yearly' ? option.yearlyPrice / 12 : option.monthlyPrice;
+        monthlyTotal += option.monthlyPrice;
+        yearlyTotal += option.yearlyPrice;
       }
     });
 
-    // Add additional services
+    // Calculate additional services
     state.additionalServices.forEach(serviceId => {
       const service = additionalServices.find(s => s.id === serviceId);
       if (service) {
-        total += state.billingCycle === 'yearly' ? service.yearlyPrice / 12 : service.monthlyPrice;
+        monthlyTotal += service.monthlyPrice;
+        yearlyTotal += service.yearlyPrice;
       }
     });
 
-    setTotalPrice(total);
+    const currentPrice = state.billingCycle === 'yearly' ? yearlyTotal : monthlyTotal;
+    setTotalPrice(currentPrice);
+    setRecommendations(generateRecommendations());
   }, [state]);
 
   // Generate recommendations based on selections

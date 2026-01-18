@@ -243,10 +243,44 @@ export function PlansComparator() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('yearly');
   const [selectedPlans, setSelectedPlans] = useState<string[]>(['hosting-estandar', 'vps-pro']);
+  
+  // Advanced filters
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 10000]);
+  const [showOnlyPopular, setShowOnlyPopular] = useState(false);
+  const [sortBy, setSortBy] = useState<'price' | 'name' | 'popular'>('price');
 
-  const filteredPlans = selectedCategory === 'all' 
-    ? allPlans 
-    : allPlans.filter(plan => plan.category === selectedCategory);
+  const filteredPlans = allPlans.filter(plan => {
+    // Category filter
+    if (selectedCategory !== 'all' && plan.category !== selectedCategory) {
+      return false;
+    }
+    
+    // Price range filter
+    const price = billingCycle === 'yearly' ? plan.price.yearly / 12 : plan.price.monthly;
+    if (price < priceRange[0] || price > priceRange[1]) {
+      return false;
+    }
+    
+    // Popular filter
+    if (showOnlyPopular && !plan.popular) {
+      return false;
+    }
+    
+    return true;
+  }).sort((a, b) => {
+    switch (sortBy) {
+      case 'price':
+        const priceA = billingCycle === 'yearly' ? a.price.yearly / 12 : a.price.monthly;
+        const priceB = billingCycle === 'yearly' ? b.price.yearly / 12 : b.price.monthly;
+        return priceA - priceB;
+      case 'name':
+        return a.name.localeCompare(b.name);
+      case 'popular':
+        return b.popular ? 1 : -1;
+      default:
+        return 0;
+    }
+  });
 
   const plansToCompare = allPlans.filter(plan => selectedPlans.includes(plan.id));
 

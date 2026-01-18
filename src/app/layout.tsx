@@ -11,49 +11,83 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://new.arciicloud.com'),
   title: {
-    default: 'ARCII Cloud - El Hosting #1 de México',
+    default: 'ARCII Cloud - Hosting Premium México | Servidores VPS y Dominios',
     template: '%s | ARCII Cloud',
   },
-  description: 'ARCII Cloud es una empresa dedicada a la comercialización de servicios de infraestructura en la nube, como hosting web, hosting para agencias, correo electrónico y bases de datos como servicios.',
+  description: 'Líder en hosting web México con 99.9% uptime garantizado. Hosting WordPress, VPS Cloud, servidores dedicados, dominios .mx y email corporativo. Soporte 24/7 desde $299/mes.',
   keywords: [
     'hosting mexico',
+    'hosting web mexico', 
     'cloud hosting',
-    'servidores dedicados',
+    'wordpress hosting mexico',
+    'servidores dedicados mexico',
     'vps mexico',
+    'vps cloud',
     'hosting empresarial',
     'dominios mexico',
-    'email corporativo',
-    'datacenter mexico'
+    'dominios .mx',
+    'email corporativo mexico',
+    'datacenter mexico',
+    'hosting barato mexico',
+    'mejor hosting mexico 2026',
+    'cpanel hosting',
+    'ssl certificado',
+    'backup hosting'
   ],
-  authors: [{ name: 'ARCII Cloud Team' }],
+  authors: [{ name: 'ARCII Cloud Development Team' }],
   creator: 'ARCII Cloud',
+  publisher: 'ARCII Cloud',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: 'website',
     locale: 'es_MX',
-    url: 'https://arciicloud.com',
+    alternateLocale: ['es_ES', 'en_US'],
+    url: 'https://new.arciicloud.com',
     siteName: 'ARCII Cloud',
-    title: 'ARCII Cloud - El Hosting #1 de México',
-    description: 'Servicios de hosting web, cloud, servidores dedicados y soluciones empresariales con centros de datos en todo el mundo.',
+    title: 'ARCII Cloud - Hosting Premium México | El #1 en Confiabilidad',
+    description: '🚀 Hosting web premium con 99.9% uptime. VPS Cloud desde $899/mes. SSL gratis, backups automáticos y soporte 24/7. 15+ años de experiencia. ¡Pruébalo gratis!',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/og-image-main.jpg',
         width: 1200,
         height: 630,
-        alt: 'ARCII Cloud - Hosting Premium',
+        alt: 'ARCII Cloud - Hosting Premium México',
+        type: 'image/jpeg',
+      },
+      {
+        url: '/images/og-image-square.jpg',
+        width: 400,
+        height: 400,
+        alt: 'ARCII Cloud Logo',
+        type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ARCII Cloud - El Hosting #1 de México',
-    description: 'Servicios de hosting web, cloud, servidores dedicados y soluciones empresariales.',
+    site: '@arciicloud',
     creator: '@arciicloud',
-    images: ['/og-image.jpg'],
+    title: 'ARCII Cloud - Hosting Premium México | VPS y Dominios',
+    description: '🔥 El hosting más confiable de México. 99.9% uptime, SSL gratis, soporte 24/7. Planes desde $299/mes. ¡15 años de experiencia te respaldan!',
+    images: [
+      {
+        url: '/images/twitter-card.jpg',
+        width: 1200,
+        height: 600,
+        alt: 'ARCII Cloud - Hosting Premium México',
+      },
+    ],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
@@ -63,11 +97,22 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
     shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   manifest: '/site.webmanifest',
+  verification: {
+    google: 'tu-codigo-google-verification',
+    other: {
+      'msvalidate.01': 'tu-codigo-bing-verification',
+    },
+  },
 };
 
 export default function RootLayout({
