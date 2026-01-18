@@ -268,18 +268,21 @@ export function Header() {
             <Link href="/datacenter" className="text-secondary-700 hover:text-primary-600 font-medium transition-colors">
               Datacenter
             </Link>
-            <Link href="/soporte" className="text-secondary-700 hover:text-primary-600 font-medium transition-colors">
-              Soporte
+            <Link href="/testimonios" className="text-secondary-700 hover:text-primary-600 font-medium transition-colors">
+              Testimonios
             </Link>
-            <Link href="/blog" className="text-secondary-700 hover:text-primary-600 font-medium transition-colors">
-              Blog
+            <Link href="/estado" className="text-secondary-700 hover:text-primary-600 font-medium transition-colors">
+              Estado
+            </Link>
+            <Link href="/afiliados" className="text-secondary-700 hover:text-primary-600 font-medium transition-colors">
+              Afiliados
             </Link>
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="ghost" size="sm" asChild>
-              <Link href="/login">Iniciar Sesión</Link>
+              <Link href="/dashboard">Mi Panel</Link>
             </Button>
             <Button size="sm" asChild>
               <Link href="/empezar">Empezar Ahora</Link>
@@ -336,11 +339,50 @@ export function Header() {
                 ))}
               </div>
             </div>
+
+            <div>
+              <h3 className="font-semibold text-secondary-900 mb-3">Herramientas</h3>
+              <div className="space-y-2 pl-4">
+                <Link href="/speed-test" className="block py-2 text-secondary-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+                  Test de Velocidad
+                </Link>
+                <Link href="/calculadora-avanzada" className="block py-2 text-secondary-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+                  Calculadora de Costos
+                </Link>
+                <Link href="/comparar-planes" className="block py-2 text-secondary-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+                  Comparar Planes
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-secondary-900 mb-3">Soporte</h3>
+              <div className="space-y-2 pl-4">
+                <Link href="/mesa-de-ayuda" className="block py-2 text-secondary-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+                  Mesa de Ayuda
+                </Link>
+                <Link href="/estado" className="block py-2 text-secondary-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+                  Estado de Servicios
+                </Link>
+                <Link href="/testimonios" className="block py-2 text-secondary-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+                  Testimonios
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-secondary-900 mb-3">Oportunidades</h3>
+              <div className="space-y-2 pl-4">
+                <Link href="/afiliados" className="block py-2 text-secondary-600 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>
+                  Programa de Afiliados
+                </Link>
+              </div>
+            </div>
             
             <div className="border-t border-secondary-200 pt-6">
               <div className="flex flex-col gap-3">
                 <Button variant="ghost" className="w-full" asChild>
-                  <Link href="/login">Iniciar Sesión</Link>
+                  <Link href="/dashboard">Mi Panel</Link>
                 </Button>
                 <Button className="w-full" asChild>
                   <Link href="/empezar">Empezar Ahora</Link>
