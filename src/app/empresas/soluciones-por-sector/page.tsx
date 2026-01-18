@@ -283,7 +283,7 @@ export default function SolucionesPorSectorPage() {
                   <div className="text-sm text-secondary-600">Uptime E-commerce</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600">< 2s</div>
+                  <div className="text-3xl font-bold text-green-600">&lt; 2s</div>
                   <div className="text-sm text-secondary-600">Page Load Time</div>
                 </div>
                 <div className="text-center">

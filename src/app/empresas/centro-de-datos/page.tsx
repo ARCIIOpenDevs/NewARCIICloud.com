@@ -119,7 +119,7 @@ export default function CentroDeDatosPage() {
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                  Transferencia automática < 4ms
+                  Transferencia automática &lt; 4ms
                 </li>
               </ul>
             </div>
