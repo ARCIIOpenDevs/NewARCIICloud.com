@@ -51,7 +51,7 @@ export default function FacturacionPage() {
     }
   ]
 
-  const estadoColor = {
+  const estadoColor: Record<string, string> = {
     'Pagada': 'bg-green-100 text-green-700',
     'Pendiente': 'bg-yellow-100 text-yellow-700',
     'Vencida': 'bg-red-100 text-red-700'
