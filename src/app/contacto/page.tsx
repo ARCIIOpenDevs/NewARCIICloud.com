@@ -42,7 +42,7 @@ const contactMethods = [
     href: '#chat',
     color: 'from-green-400 to-emerald-500',
     available: '24/7 - Siempre disponible',
-    response: '< 30 segundos',
+    response: '&lt; 30 segundos',
   },
   {
     title: 'WhatsApp Business',
@@ -52,7 +52,7 @@ const contactMethods = [
     href: 'https://wa.me/52155123456789',
     color: 'from-green-500 to-green-600',
     available: 'Lunes a Domingo 7:00-23:00',
-    response: '< 2 minutos',
+    response: '&lt; 2 minutos',
   },
   {
     title: 'Teléfono México',
@@ -72,7 +72,7 @@ const contactMethods = [
     href: 'mailto:soporte@arciicloud.com',
     color: 'from-purple-400 to-purple-600',
     available: 'Respuesta garantizada',
-    response: '< 2 horas',
+    response: '&lt; 2 horas',
   },
 ];
 
@@ -144,7 +144,7 @@ const offices = [
 const faqs = [
   {
     question: '¿Cuál es el tiempo de respuesta del soporte?',
-    answer: 'Chat en vivo: < 30 segundos | WhatsApp: < 2 minutos | Email: < 2 horas | Teléfono: Sin espera',
+    answer: 'Chat en vivo: &lt; 30 segundos | WhatsApp: &lt; 2 minutos | Email: &lt; 2 horas | Teléfono: Sin espera',
   },
   {
     question: '¿El soporte está disponible fines de semana?',
@@ -388,11 +388,11 @@ export default function ContactoPage() {
                     </div>
                     <div className="flex justify-between">
                       <span>WhatsApp:</span>
-                      <span className="font-medium text-green-600">< 2 minutos</span>
+                      <span className="font-medium text-green-600">&lt; 2 minutos</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Email:</span>
-                      <span className="font-medium text-blue-600">< 2 horas</span>
+                      <span className="font-medium text-blue-600">&lt; 2 horas</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Teléfono:</span>

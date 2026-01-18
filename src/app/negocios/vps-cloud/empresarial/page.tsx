@@ -82,7 +82,7 @@ const enterpriseFeatures = [
   {
     title: 'Soporte Dedicado',
     description: 'Gerente de cuenta y soporte prioritario',
-    guarantee: 'Respuesta < 15 minutos',
+    guarantee: 'Respuesta &lt; 15 minutos',
   },
   {
     title: 'Backups Enterprise',
@@ -92,7 +92,7 @@ const enterpriseFeatures = [
   {
     title: 'Monitoreo Proactivo',
     description: 'Monitoreo 24/7 con alertas instantáneas',
-    guarantee: 'Detección < 60 segundos',
+    guarantee: 'Detección &lt; 60 segundos',
   },
   {
     title: 'Seguridad Avanzada',
@@ -150,7 +150,7 @@ const technicalSpecs = [
 
 const infrastructureFeatures = [
   'Arquitectura multi-zona redundante',
-  'Failover automático < 30 segundos',
+  'Failover automático &lt; 30 segundos',
   'Balanceador de carga L4/L7',
   'Auto-scaling bajo demanda',
   'Database clustering (MySQL/PostgreSQL)',
@@ -181,8 +181,8 @@ const comparison = [
 
 const slaMetrics = [
   { metric: 'Uptime Garantizado', value: '99.99%', description: 'Máximo 4.38 horas downtime/año' },
-  { metric: 'Tiempo de Respuesta', value: '< 15 min', description: 'Soporte crítico prioritario' },
-  { metric: 'Tiempo Resolución', value: '< 4 horas', description: 'Problemas críticos nivel 1' },
+  { metric: 'Tiempo de Respuesta', value: '&lt; 15 min', description: 'Soporte crítico prioritario' },
+  { metric: 'Tiempo Resolución', value: '&lt; 4 horas', description: 'Problemas críticos nivel 1' },
   { metric: 'Créditos SLA', value: '10-50%', description: 'Por incumplimiento de uptime' },
 ];
 
@@ -566,7 +566,7 @@ export default function VPSEmpresarialPage() {
                 </div>
                 <div className="text-center">
                   <div className="bg-white rounded-2xl p-8 shadow-lg">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">< 15min</div>
+                    <div className="text-4xl font-bold text-blue-600 mb-2">&lt; 15min</div>
                     <div className="text-blue-800 font-medium">Respuesta Garantizada</div>
                     <div className="text-sm text-blue-600 mt-2">Para incidencias críticas</div>
                   </div>

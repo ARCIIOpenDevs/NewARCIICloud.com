@@ -118,10 +118,10 @@ const businessFeatures = [
 ];
 
 const performanceMetrics = [
-  { metric: 'Tiempo de Carga', value: '< 2.5s', description: 'Con CDN global activado' },
+  { metric: 'Tiempo de Carga', value: '&lt; 2.5s', description: 'Con CDN global activado' },
   { metric: 'Uptime Garantizado', value: '99.95%', description: 'SLA mejorado para negocios' },
-  { metric: 'Soporte Prioritario', value: '< 15min', description: 'Tiempo de respuesta promedio' },
-  { metric: 'Backup Recovery', value: '< 1hr', description: 'Restauración completa' },
+  { metric: 'Soporte Prioritario', value: '&lt; 15min', description: 'Tiempo de respuesta promedio' },
+  { metric: 'Backup Recovery', value: '&lt; 1hr', description: 'Restauración completa' },
 ];
 
 export default function HostingEstandarPage() {

@@ -91,7 +91,7 @@ const targetAudience = [
   {
     title: 'Sitios de Alto Tráfico',
     description: 'Más de 100,000 visitantes mensuales',
-    metrics: ['< 1.5s tiempo de carga', '99.99% uptime', 'Auto-escalado', 'Cache inteligente'],
+    metrics: ['&lt; 1.5s tiempo de carga', '99.99% uptime', 'Auto-escalado', 'Cache inteligente'],
   },
   {
     title: 'E-commerce Premium',
