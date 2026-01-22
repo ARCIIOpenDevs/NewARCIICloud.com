@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: newarciicloud
+    env: node
+    buildCommand: npm install --legacy-peer-deps && npm run build:prod
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 18.18.0
