@@ -2,7 +2,7 @@ services:
   - type: web
     name: newarciicloud
     env: node
-    buildCommand: npm install --legacy-peer-deps && npm run build:prod
+    buildCommand: rm -rf .next && npm install --legacy-peer-deps && npm run build:prod
     startCommand: npm start
     plan: free
     runtime: node

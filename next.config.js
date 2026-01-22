@@ -3,6 +3,7 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['@heroicons/react', 'lucide-react'],
   },
+  output: 'standalone',
   images: {
     domains: ['images.unsplash.com', 'via.placeholder.com'],
     formats: ['image/webp', 'image/avif'],
