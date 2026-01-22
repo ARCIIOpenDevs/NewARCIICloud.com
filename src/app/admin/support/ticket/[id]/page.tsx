@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Button } from '@/components/ui/ButtonCRM';
+import { Button } from '@/components/ui/Button';
 import { useSupport } from '@/hooks/useSupport';
 import { TicketFormData, RespuestaTicket, EstadoTicket } from '@/types/support';
 import { format, formatDistanceToNow } from 'date-fns';

@@ -3,7 +3,7 @@
 import React from 'react';
 import { Client } from '@/types';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Button } from '@/components/ui/ButtonCRM';
+import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 
 interface ClientDetailProps {

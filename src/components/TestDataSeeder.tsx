@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@/components/ui/ButtonCRM';
+import { Button } from '@/components/ui/Button';
 
 export default function TestDataSeeder() {
   const [isSeeding, setIsSeeding] = useState(false);

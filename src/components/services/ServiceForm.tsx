@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { CreateServiceForm } from '@/types';
-import { Button } from '@/components/ui/ButtonCRM';
+import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
 interface ServiceFormProps {

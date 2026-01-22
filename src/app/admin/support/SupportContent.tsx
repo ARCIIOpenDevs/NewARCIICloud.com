@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Button } from '@/components/ui/ButtonCRM';
+import { Button } from '@/components/ui/Button';
 import { useSupport } from '@/hooks/useSupport';
 import { useClients } from '@/hooks/useClients';
 import { TicketFormData, EstadoTicket, PrioridadTicket, CategoriaTicket } from '@/types/support';
