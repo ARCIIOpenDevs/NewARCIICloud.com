@@ -8,6 +8,11 @@ const nextConfig = {
     domains: ['images.unsplash.com', 'via.placeholder.com'],
     formats: ['image/webp', 'image/avif'],
   },
+  // Configuración específica para app directory
+  skipTrailingSlashRedirect: true,
+  trailingSlash: false,
+  
+  // Headers de seguridad
   async headers() {
     return [
       {
