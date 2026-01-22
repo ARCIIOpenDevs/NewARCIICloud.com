@@ -48,6 +48,35 @@ temp
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+
+# Firebase Configuration Files
+firebase-adminsdk-*.json
+.firebaserc
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# CRM/ERP specific
+uploads/
+exports/
+backups/
+reports/
+
+# SSL Certificates (for development)
+*.key
+*.crt
+*.pem
+
+# Database backups
+*.db
+*.sqlite
+*.sql
+
+# Storybook
+storybook-static/
+
+# Bundle analyzer
+.analyze/
 .idea
 *.suo
 *.ntvs*
