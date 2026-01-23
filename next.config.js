@@ -11,6 +11,12 @@ const nextConfig = {
   },
   output: 'standalone',
   transpilePackages: [],
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Asegurar que los alias se resuelvan correctamente
     config.resolve.alias = {

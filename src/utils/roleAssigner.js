@@ -4,7 +4,7 @@ import { db } from '@/lib/firebase';
 // Script para asignar rol de administrador
 // Ejecutar desde la consola del navegador
 
-(window as any).assignAdminRole = async function(userEmail: string, role: 'admin' | 'superadmin' = 'admin') {
+window.assignAdminRole = async function(userEmail, role = 'admin') {
   try {
     console.log(`🔍 Buscando usuario: ${userEmail}...`);
     
