@@ -56,7 +56,7 @@
           uid: userId,
           email: email,
           displayName: 'Super Admin',
-          photoURL: null,
+          photoURL: undefined,
           role: 'superadmin',
           permissions: {
             clients: { read: true, write: true, delete: true },
