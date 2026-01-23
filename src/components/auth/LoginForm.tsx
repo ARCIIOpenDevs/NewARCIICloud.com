@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthContext } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/Button';
@@ -20,6 +20,77 @@ export const LoginForm: React.FC<LoginFormProps> = ({ redirect = '/admin' }) => 
 
   const { signIn } = useAuthContext();
   const router = useRouter();
+
+  // Script para asignar roles - solo en desarrollo
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      (window as any).assignAdminRole = async function(userEmail: string, role: 'admin' | 'superadmin' = 'admin') {
+        try {
+          const { collection, query, where, getDocs, updateDoc, doc, Timestamp } = await import('firebase/firestore');
+          const { db } = await import('@/lib/firebase');
+          
+          console.log(`🔍 Buscando usuario: ${userEmail}...`);
+          
+          const usersRef = collection(db, 'users');
+          const q = query(usersRef, where('email', '==', userEmail));
+          const querySnapshot = await getDocs(q);
+
+          if (querySnapshot.empty) {
+            console.error(`❌ Usuario ${userEmail} no encontrado`);
+            alert(`Usuario ${userEmail} no encontrado`);
+            return false;
+          }
+
+          const userDoc = querySnapshot.docs[0];
+          const userId = userDoc.id;
+          const userData = userDoc.data();
+
+          console.log(`👤 Usuario encontrado: ${userData.displayName || 'Sin nombre'}`);
+
+          const permissions = role === 'superadmin' ? {
+            clients: { read: true, write: true, delete: true },
+            services: { read: true, write: true, delete: true },
+            billing: { read: true, write: true, delete: true },
+            support: { read: true, write: true, delete: true },
+            cms: { read: true, write: true, delete: true },
+            analytics: { read: true, write: true, delete: true },
+          } : {
+            clients: { read: true, write: true, delete: false },
+            services: { read: true, write: true, delete: false },
+            billing: { read: true, write: true, delete: false },
+            support: { read: true, write: true, delete: false },
+            cms: { read: true, write: true, delete: false },
+            analytics: { read: true, write: false, delete: false },
+          };
+
+          await updateDoc(doc(db, 'users', userId), {
+            role: role,
+            permissions: permissions,
+            updatedAt: Timestamp.now()
+          });
+
+          console.log(`✅ ¡Rol actualizado exitosamente!`);
+          alert(`✅ ${userEmail} ahora es ${role}. ¡Inicia sesión!`);
+          
+          return true;
+        } catch (error) {
+          console.error('❌ Error:', error);
+          alert(`❌ Error: ${error}`);
+          return false;
+        }
+      };
+
+      console.log(`
+🔧 ASIGNAR ROLES DE ADMIN:
+
+Para convertir un usuario en ADMIN:
+assignAdminRole('tu-email@ejemplo.com', 'admin')
+
+Para convertir un usuario en SUPERADMIN:
+assignAdminRole('tu-email@ejemplo.com', 'superadmin')
+      `);
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
