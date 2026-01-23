@@ -110,7 +110,7 @@ export const useAuth = () => {
           uid: firebaseUser.uid,
           email: firebaseUser.email || userData.email,
           displayName: firebaseUser.displayName || userData.displayName,
-          photoURL: firebaseUser.photoURL || userData.photoURL || undefined,
+          photoURL: firebaseUser.photoURL || userData.photoURL || null,
         };
       } else {
         // Create default user document if it doesn't exist
@@ -118,7 +118,7 @@ export const useAuth = () => {
           uid: firebaseUser.uid,
           email: firebaseUser.email || '',
           displayName: firebaseUser.displayName || '',
-          photoURL: firebaseUser.photoURL || undefined,
+          photoURL: firebaseUser.photoURL || null,
           role: 'client', // Default role
           permissions: getDefaultPermissions('client'),
           active: true,
