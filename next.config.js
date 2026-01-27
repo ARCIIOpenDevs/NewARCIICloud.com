@@ -10,7 +10,6 @@ const nextConfig = {
     optimizePackageImports: ['@heroicons/react', 'lucide-react'],
   },
   output: 'standalone',
-  transpilePackages: [],
   trailingSlash: false,
   eslint: {
     ignoreDuringBuilds: true,
@@ -18,15 +17,12 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
-  // Temporarily disable static optimization for problematic routes
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Asegurar que los alias se resuelvan correctamente
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': path.join(__dirname, 'src'),
     };
     
-    // Configuración específica para producción
     if (!dev) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
@@ -41,32 +37,6 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com', 'via.placeholder.com'],
     formats: ['image/webp', 'image/avif'],
-  },
-  // Configuración específica para app directory
-  skipTrailingSlashRedirect: true,
-  trailingSlash: false,
-  
-  // Headers de seguridad
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin',
-          },
-        ],
-      },
-    ];
   },
 };
 

@@ -121,7 +121,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es-MX" className={`${inter.variable} scroll-smooth`}>
+    <html lang="es-MX" className={`${inter.variable} scroll-smooth`} suppressHydrationWarning={true}>
       <body className="font-sans antialiased bg-white text-secondary-900">
         <Header />
         <div id="__next">
