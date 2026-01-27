@@ -20,6 +20,20 @@ const nextConfig = {
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   // Disable static optimization to prevent Html import errors
   generateBuildId: () => 'build',
+  // Force all pages to be dynamic - valid App Router configuration
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [];
   },
