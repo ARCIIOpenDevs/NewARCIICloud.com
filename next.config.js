@@ -11,12 +11,14 @@ const nextConfig = {
   },
   output: 'standalone',
   transpilePackages: [],
+  trailingSlash: false,
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: false,
   },
+  // Temporarily disable static optimization for problematic routes
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Asegurar que los alias se resuelvan correctamente
     config.resolve.alias = {
