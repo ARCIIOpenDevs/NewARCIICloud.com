@@ -4,6 +4,10 @@ import '@/styles/globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
+// Force dynamic rendering globally
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',

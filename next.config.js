@@ -18,6 +18,14 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+  // Disable static optimization to prevent Html import errors
+  generateBuildId: () => 'build',
+  async redirects() {
+    return [];
+  },
+  async rewrites() {
+    return [];
+  },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -32,6 +40,12 @@ const nextConfig = {
         tls: false,
       };
     }
+    
+    // Disable problematic optimizations
+    config.optimization = {
+      ...config.optimization,
+      usedExports: false,
+    };
     
     return config;
   },
