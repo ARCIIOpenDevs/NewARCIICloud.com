@@ -3,14 +3,14 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, query, where, getDocs, updateDoc, doc, Timestamp } from 'firebase/firestore';
 
-// Configuración de Firebase
+// Configuración de Firebase (usando la correcta del .env.local)
 const firebaseConfig = {
-  apiKey: "AIzaSyBmE87ivn_N9pWAjTrYvMxlOO5P8FnKzYE",
+  apiKey: "AIzaSyA9aoORDoYpDkN0E5OYSmObqG735fZZS2Y",
   authDomain: "newarciicloud.firebaseapp.com", 
   projectId: "newarciicloud",
   storageBucket: "newarciicloud.firebasestorage.app",
-  messagingSenderId: "669688654301",
-  appId: "1:669688654301:web:4a2bf45e0bd3ac5b57c6b3"
+  messagingSenderId: "97444629257",
+  appId: "1:97444629257:web:b5939807786aa4333061d8"
 };
 
 console.log('🚀 ASIGNANDO ROL SUPERADMIN A USUARIO REAL...');
