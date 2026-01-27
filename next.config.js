@@ -17,6 +17,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
