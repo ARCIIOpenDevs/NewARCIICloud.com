@@ -11,6 +11,10 @@ const nextConfig = {
   },
   output: 'standalone',
   trailingSlash: false,
+  // Disable all static generation and prerendering
+  generateBuildId: () => 'dynamic',
+  poweredByHeader: false,
+  compress: true,
   typescript: {
     ignoreBuildErrors: false,
   },
