@@ -8,14 +8,9 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
   experimental: {
     optimizePackageImports: ['@heroicons/react', 'lucide-react'],
-    // Force all pages to be dynamic
-    forceSwcTransforms: true,
   },
   output: 'standalone',
   trailingSlash: false,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: false,
   },
@@ -55,22 +50,6 @@ const nextConfig = {
         net: false,
         tls: false,
       };
-    }
-    
-    // Disable all optimizations that might cause Html import issues
-    config.optimization = {
-      ...config.optimization,
-      usedExports: false,
-      sideEffects: false,
-      minimize: false,
-    };
-    
-    // Prevent Html component bundling issues
-    config.externals = config.externals || [];
-    if (Array.isArray(config.externals)) {
-      config.externals.push({
-        'next/document': 'commonjs next/document'
-      });
     }
     
     return config;
