@@ -9,38 +9,13 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['@heroicons/react', 'lucide-react'],
   },
-  output: 'standalone',
+  output: 'standalone', // Cambiamos de vuelta a standalone para desarrollo
   trailingSlash: false,
-  // Disable all static generation and prerendering
-  generateBuildId: () => 'dynamic',
   poweredByHeader: false,
-  compress: true,
   typescript: {
     ignoreBuildErrors: false,
   },
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
-  // Disable static optimization to prevent Html import errors
-  generateBuildId: () => 'build',
-  // Force all pages to be dynamic - valid App Router configuration
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate',
-          },
-        ],
-      },
-    ];
-  },
-  async redirects() {
-    return [];
-  },
-  async rewrites() {
-    return [];
-  },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -59,6 +34,7 @@ const nextConfig = {
     return config;
   },
   images: {
+    unoptimized: true,
     domains: ['images.unsplash.com', 'via.placeholder.com'],
     formats: ['image/webp', 'image/avif'],
   },
